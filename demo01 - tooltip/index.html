@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>demo 01 - Google Closure Library</title>
+        <script type="text/javascript" src="../goog/base.js"></script>
+        <script>
+            goog.require('goog.dom.dataset');
+            goog.require('goog.ui.Tooltip');
+        </script>
+        <style>
+            .goog-tooltip {
+              background: lightblue;
+              color: #555;
+              border: 1px solid #000;
+              padding: 5px;
+              font: 'Arial';
+            }
+
+            span.tooltip {
+              text-decoration: underline;
+              color: darkblue;
+            }
+        </style>
+    </head>
+    <body>
+        <h1><strong>Simple Tooltip demo</strong></h1><br/>
+
+        <p>Lorem ipsum dolor sit amet, <span id="toolTip1" class="tooltip" data-tooltipmsg="this is the content of the tooltip">consectetuer</span> adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. <span class="tooltip" data-tooltipmsg="this is an other tooltip content">Nulla</span> consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.</p>
+
+    <script>
+        var tooltipElements = goog.dom.$$('span','tooltip'),
+            toolTips = [];
+
+        for (var i = 0; i < tooltipElements.length; i++) {
+            toolTips.push( new goog.ui.Tooltip(tooltipElements[i], goog.dom.dataset.get(tooltipElements[i], 'tooltipmsg')) );
+        };
+    </script>
+    </body>
+</html>
