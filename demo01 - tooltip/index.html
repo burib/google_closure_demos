@@ -26,14 +26,14 @@
     <body>
         <h1><strong>Simple Tooltip demo</strong></h1><br/>
 
-        <p>Lorem ipsum dolor sit amet, <span id="toolTip1" class="tooltip" data-tooltipmsg="this is the content of the tooltip">consectetuer</span> adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. <span class="tooltip" data-tooltipmsg="this is an other tooltip content">Nulla</span> consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.</p>
+        <p>Lorem ipsum dolor sit amet, <span id="toolTip1" class="tooltip" data-tooltiptext="this is the content of the tooltip">consectetuer</span> adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. <span class="tooltip" data-tooltiptext="this is an other tooltip content">Nulla</span> consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.</p>
 
     <script>
-        var tooltipElements = goog.dom.$$('span','tooltip'),
+        var tooltipElements = goog.dom.getElementsByClass('tooltip'),
             toolTips = [];
 
         for (var i = 0; i < tooltipElements.length; i++) {
-            toolTips.push( new goog.ui.Tooltip(tooltipElements[i], goog.dom.dataset.get(tooltipElements[i], 'tooltipmsg')) );
+            toolTips.push( new goog.ui.Tooltip(tooltipElements[i], goog.dom.dataset.get(tooltipElements[i], 'tooltiptext')) );
         };
     </script>
     </body>
