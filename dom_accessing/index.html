@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>demo 01 - Google Closure Library</title>
+        <link type="text/css" href="http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.css" rel="stylesheet" />
+        <script type="text/javascript" src="http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.js"></script>
+        <script type="text/javascript" src="../closure-library/closure/goog/base.js"></script>
+
+    </head>
+    <body>
+        <p>please open up console</p>
+        <p id="myId" class="myClass">Lorem ipsum dolor sit amet</p>
+        <div id="testID">
+          <p class="myClass">Lorem</p>
+          <p class="testClass">Lorem</p>
+        </div>
+
+    <script>
+      goog.require('goog.dom');
+    </script>
+    <script>
+      console.log( "goog.dom.getElement('myId')" );
+      console.log( goog.dom.getElement('myId') );
+      console.log( "\ngoog.dom.getElementByClass('myClass')" );
+      console.log( goog.dom.getElementByClass('myClass') ); // returns the first element with the class="myClass"
+      console.log( goog.dom.getElementByClass('myClass') );
+      console.log( "\n" );
+      console.log( goog.dom.getElementsByClass('myClass') );
+      console.log( "\n" );
+      console.log( goog.dom.getElementsByTagNameAndClass() );
+      console.log( "\t-------elements by TagName--------" );
+      console.log( goog.dom.getElementsByTagNameAndClass('p') );
+      console.log( "\t-------elements by TagName and Class--------" );
+      console.log( goog.dom.getElementsByTagNameAndClass('p', 'testClass') );
+      console.log( "\t-------elements by TagName and Class within a certain Element--------" );
+      console.log( goog.dom.getElementsByTagNameAndClass('p', null, goog.dom.getElement('testID')) );
+    </script>
+    </body>
+</html>
