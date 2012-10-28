@@ -73,3 +73,23 @@ label, input {
   font: italic 95% Arial, sans-serif;
   color: #999;
 }
+
+#editMe {
+  width: 600px;
+  height: 300px;
+  background-color: #fff;
+  border: 1px solid #4d4d4d;
+  border-top: 0;
+  margin-bottom: 50px;
+}
+#toolbar { width: 600px; border: 1px solid #4d4d4d; border-bottom: 0; }
+#fieldContents {
+  height: 100px;
+  width: 600px;
+  padding: 0;
+  margin-bottom: 20px;
+  display: block;
+  clear: both;
+  border: 1px solid #4d4d4d;
+  resize: none;
+}

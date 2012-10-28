@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>goog.editor Demo</title>
+  <link rel="stylesheet" href="css/wysiwyg.basic.min.css">
+  </head>
+  <body>
+    <h1>goog.editor Demo</h1>
+    <div id='toolbar'></div>
+    <div id='editMe'></div>
+    <textarea id="fieldContents"></textarea>
+
+    <input type="button" value="Set Field Contents" id="setContent" />
+    <p>(Use to set contents of the editable field to the contents of this textarea)</p>
+
+
+    <script type="text/javascript" src="js/wysiwyg.basic.min.js"></script>
+    <script>
+      wysiwyg.init();
+    </script>
+  </body>
+</html>
