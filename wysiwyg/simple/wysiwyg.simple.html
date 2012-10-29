@@ -3,26 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>goog.editor Demo</title>
-    <link rel="stylesheet" href="css/demo.css">
-    <link rel="stylesheet" href="css/button.css"/>
-    <link rel="stylesheet" href="css/dialog.css"/>
-    <link rel="stylesheet" href="css/linkbutton.css"/>
-    <link rel="stylesheet" href="css/menu.css">
-    <link rel="stylesheet" href="css/menuitem.css">
-    <link rel="stylesheet" href="css/menuseparator.css">
-    <link rel="stylesheet" href="css/tab.css"/>
-    <link rel="stylesheet" href="css/tabbar.css"/>
-    <link rel="stylesheet" href="css/toolbar.css"/>
-    <link rel="stylesheet" href="css/colormenubutton.css"/>
-    <link rel="stylesheet" href="css/palette.css"/>
-    <link rel="stylesheet" href="css/colorpalette.css"/>
-    <link rel="stylesheet" href="css/editor/bubble.css"/>
-    <link rel="stylesheet" href="css/editor/dialog.css"/>
-    <link rel="stylesheet" href="css/editor/linkdialog.css"/>
-    <link rel="stylesheet" href="css/editortoolbar.css"/>
+    <link rel="stylesheet" href="css/pretty.css"/>
+    <link rel="stylesheet" href="css/wysiwyg.simple.min.css"/>
   </head>
   <body>
-      <h1>goog.editor Demo</h1>
+      <h1>goog.editor Demo with image upload</h1>
 
       <textarea id='editorId' name="message">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -32,21 +17,27 @@
         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </textarea>
-
-<pre>
+      <br/>
+<pre class="prettyprint lang-html">
+&lt;script type=&quot;text/javascript&quot;&gt;
   imigu.editor('editorId', {
     actionUrl : '/upload_image',
-    extraCode: '<input name="token" type="hidden" value="TOKEN_VALUE_FOO" />'
+    extraCode: '&lt;input name=&quot;token&quot; type=&quot;hidden&quot; value=&quot;TOKEN_VALUE_FOO&quot; /&gt;'
   });
+&lt;/script&gt;
 </pre>
 
-      <script type="text/javascript" src="js/editor.min.js"></script>
-      <script>
-          imigu.editor('editorId', {
-            actionUrl : '/upload_image',
-            extraCode: '<input name="token" type="hidden" value="TOKEN_VALUE_FOO" />'
-          });
+    <script type="text/javascript" src="http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.js"></script>
+    <script src="../../closure-library/closure/goog/base.js"></script>
+    <script type="text/javascript" src="js/deps.js"></script>
+    <script type="text/javascript" src="js/editor.js"></script>
+    <script>
+        imigu.editor('editorId', {
+          actionUrl : '/upload_image',
+          extraCode: '<input name="token" type="hidden" value="TOKEN_VALUE_FOO" />'
+        });
 
-      </script>
+      prettyPrint();
+    </script>
   </body>
 </html>

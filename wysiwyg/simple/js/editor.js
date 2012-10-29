@@ -52,18 +52,17 @@ goog.require('goog.ui.editor.ToolbarController');
  */
 imigu.editor = function(id, config) {
   function updateFieldContents() {
-    textarea.value = trogField.getCleanContents();
+    textarea.value = editorField.getCleanContents();
   }
 
-  var editorId = id + '-editor';
-  var toolbarId = id + '-toolbar';
-  var textarea = goog.dom.getElement(id);
-
-  var dom = goog.dom.getDomHelper(textarea);
-
-  var toolbar = dom.createDom(goog.dom.TagName.DIV,
+  var editorId = id + '-editor',
+      toolbarId = id + '-toolbar',
+      textarea = goog.dom.getElement(id),
+      dom = goog.dom.getDomHelper(textarea),
+      toolbar = dom.createDom(goog.dom.TagName.DIV,
                               {id: toolbarId,
                                style: 'width: 632px;'});
+
   goog.dom.insertSiblingAfter(toolbar, textarea);
 
   var editorDiv = dom.createDom(goog.dom.TagName.DIV,
@@ -74,26 +73,26 @@ imigu.editor = function(id, config) {
   textarea.style.display = 'none';
 
   // Create an editable field.
-  var trogField = new goog.editor.Field(editorId);
+  var editorField = new goog.editor.Field(editorId);
 
   // Create and register all of the editing plugins you want to use.
-  trogField.registerPlugin(new goog.editor.plugins.BasicTextFormatter());
-  trogField.registerPlugin(new
+  editorField.registerPlugin(new goog.editor.plugins.BasicTextFormatter());
+  editorField.registerPlugin(new
                          goog.editor.plugins.TagOnEnterHandler(goog.dom.TagName.P));
-  trogField.registerPlugin(new goog.editor.plugins.RemoveFormatting());
-  trogField.registerPlugin(new goog.editor.plugins.UndoRedo());
-  trogField.registerPlugin(new goog.editor.plugins.ListTabHandler());
-  trogField.registerPlugin(new goog.editor.plugins.SpacesTabHandler());
-  trogField.registerPlugin(new goog.editor.plugins.EnterHandler());
-  trogField.registerPlugin(new goog.editor.plugins.HeaderFormatter());
-  trogField.registerPlugin(
+  editorField.registerPlugin(new goog.editor.plugins.RemoveFormatting());
+  editorField.registerPlugin(new goog.editor.plugins.UndoRedo());
+  editorField.registerPlugin(new goog.editor.plugins.ListTabHandler());
+  editorField.registerPlugin(new goog.editor.plugins.SpacesTabHandler());
+  editorField.registerPlugin(new goog.editor.plugins.EnterHandler());
+  editorField.registerPlugin(new goog.editor.plugins.HeaderFormatter());
+  editorField.registerPlugin(
     new goog.editor.plugins.LoremIpsum('Click here to edit'));
-  trogField.registerPlugin(
+  editorField.registerPlugin(
     new goog.editor.plugins.LinkDialogPlugin());
-  trogField.registerPlugin(new goog.editor.plugins.LinkBubble());
+  editorField.registerPlugin(new goog.editor.plugins.LinkBubble());
 
-  trogField.registerPlugin(new goog.editor.plugins.ImageBubble());
-  trogField.registerPlugin(new goog.editor.plugins.ImageDialogPlugin(config));
+  editorField.registerPlugin(new goog.editor.plugins.ImageBubble());
+  editorField.registerPlugin(new goog.editor.plugins.ImageDialogPlugin(config));
 
   // Specify the buttons to add to the toolbar, using built in default buttons.
   var buttons = [
@@ -121,19 +120,18 @@ imigu.editor = function(id, config) {
 
   // Hook the toolbar into the field.
   var myToolbarController =
-    new goog.ui.editor.ToolbarController(trogField, myToolbar);
+    new goog.ui.editor.ToolbarController(editorField, myToolbar);
 
-  goog.ui.editor.DefaultToolbar.setLocale('zh-cn');
+  goog.ui.editor.DefaultToolbar.setLocale('hu-hu');
 
-  trogField.setHtml(false, textarea.value, true);
+  editorField.setHtml(false, textarea.value, true);
 
   // Watch for field changes, to display below.
-  goog.events.listen(trogField, goog.editor.Field.EventType.DELAYEDCHANGE,
+  goog.events.listen(editorField, goog.editor.Field.EventType.DELAYEDCHANGE,
                      updateFieldContents);
 
-  trogField.makeEditable();
+  editorField.makeEditable();
   updateFieldContents();
-
 };
 
 
