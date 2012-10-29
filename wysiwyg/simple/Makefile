@@ -17,8 +17,8 @@ compile:
 			--compilation_level ADVANCED_OPTIMIZATIONS\
 			--output_wrapper "/*@author:info@burib.net $(NOW) */;(function () {%output%})();"\
 			--use_types_for_optimization\
-			--create_source_map $(OUTDIR)/wysiwyg.basic.min.js.map\
+			--create_source_map $(OUTDIR)/editor.min.js.map\
 			--source_map_format=V3\
 			-D VERBOSE=false\
 		--\
-		-i js/wysiwyg.basic.js > $(OUTDIR)/wysiwyg.basic.min.js
+		-i js/editor.js > $(OUTDIR)/editor.min.js
