@@ -1,0 +1,1 @@
+java -jar ../closure-library/plovr.jar build plovr.json

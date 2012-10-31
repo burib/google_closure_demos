@@ -7,7 +7,7 @@ tooltip.init = function(){
         length = tooltipElements.length;
 
     for (; i < length; i++) {
-        new goog.ui.Tooltip(tooltipElements[i]).setHtml(goog.dom.dataset.get(tooltipElements[i], 'tooltiptext'));
+        new goog.ui.Tooltip(tooltipElements[i]).setHtml(goog.dom.dataset.get(tooltipElements[i], 'tooltiptext').toString());
     };
 }
 

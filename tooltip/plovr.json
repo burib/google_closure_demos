@@ -1,0 +1,23 @@
+{
+	"id": "tooltip",
+	"inputs": "js/tooltip.js",
+	"paths": ["js/"],
+	"output-wrapper": "(function(){%output%})();",
+	"mode": "ADVANCED",
+	"level": "VERBOSE",
+	"output-file": "js/tooltip.min.js",
+	"define": {
+		"goog.LOCALE": "en_GB"
+	},
+	"checks": {
+		"checkRegExp": "WARNING",
+		"checkTypes": "WARNING",
+		"checkVars": "WARNING",
+		"deprecated": "WARNING",
+		"fileoverviewTags": "WARNING",
+		"invalidCasts": "WARNING",
+		"missingProperties": "WARNING",
+		"nonStandardJsDocs": "WARNING",
+		"undefinedVars": "WARNING"
+	}
+}

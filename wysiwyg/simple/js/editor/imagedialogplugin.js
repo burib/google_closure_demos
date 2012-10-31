@@ -94,7 +94,7 @@ goog.editor.plugins.ImageDialogPlugin.prototype.config_;
  */
 goog.editor.plugins.ImageDialogPlugin.prototype.handleOk_ = function(e) {
   // Notify the editor that we are about to make changes.
-  this.fieldObject.dispatchBeforeChange();
+  this.getFieldObject().dispatchBeforeChange();
 
   // Create the image to insert.
   var image = this.getFieldDomHelper().createElement(goog.dom.TagName.IMG);
@@ -105,15 +105,15 @@ goog.editor.plugins.ImageDialogPlugin.prototype.handleOk_ = function(e) {
   // We want to insert the image in place of the user's selection.
   // So we restore it first, and then use it for insertion.
   this.restoreOriginalSelection();
-  var range = this.fieldObject.getRange();
+  var range = this.getFieldObject().getRange();
   image = range.replaceContentsWithNode(image);
 
   // Done making changes, notify the editor.
-  this.fieldObject.dispatchChange();
+  this.getFieldObject().dispatchChange();
 
   // Put the user's selection right after the newly inserted image.
   goog.editor.range.placeCursorNextTo(image, false);
 
   // Dispatch selection change event since we just moved the selection.
-  this.fieldObject.dispatchSelectionChangeEvent();
+  this.getFieldObject().dispatchSelectionChangeEvent();
 };
