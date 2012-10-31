@@ -9,7 +9,7 @@
   <body>
       <h1>goog.editor Demo with image upload</h1>
 
-      <textarea id='editorId' name="message">
+      <textarea id='editorId' class="editableField" name="message">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
         quis nostrud <a href="#">exercitation</a> ullamco laboris nisi ut aliquip ex ea commodo
@@ -20,7 +20,7 @@
       <br/>
 <pre class="prettyprint lang-html">
 &lt;script type=&quot;text/javascript&quot;&gt;
-  imigu.editor('editorId', {
+  imigu.editor('editableFieldsClassName', {
     actionUrl : '/upload_image',
     extraCode: '&lt;input name=&quot;token&quot; type=&quot;hidden&quot; value=&quot;TOKEN_VALUE_FOO&quot; /&gt;'
   });
@@ -32,7 +32,7 @@
     <script type="text/javascript" src="js/deps.js"></script>
     <script type="text/javascript" src="js/editor.js"></script>
     <script>
-        imigu.editor('editorId', {
+        imigu.editor('editableField', {
           actionUrl : '/upload_image',
           extraCode: '<input name="token" type="hidden" value="TOKEN_VALUE_FOO" />'
         });

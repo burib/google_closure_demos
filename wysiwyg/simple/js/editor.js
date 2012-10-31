@@ -47,17 +47,17 @@ goog.require('goog.ui.editor.ToolbarController');
  * </pre>
  *
  *
- * @param {string} id of content textarea container.
+ * @param {string} className of content textarea container.
  * @param {Object} config Image upload configs, must supply an actionUrl for image upload, see example.
  */
-imigu.editor = function(id, config) {
+imigu.editor = function(className, config) {
   function updateFieldContents() {
     textarea.value = editorField.getCleanContents();
   }
 
-  var editorId = id + '-editor',
-      toolbarId = id + '-toolbar',
-      textarea = goog.dom.getElement(id),
+  var editorId = className + '-editor',
+      toolbarId = className + '-toolbar',
+      textarea = goog.dom.getElementByClass(className),
       dom = goog.dom.getDomHelper(textarea),
       toolbar = dom.createDom(goog.dom.TagName.DIV,
                               {id: toolbarId,
