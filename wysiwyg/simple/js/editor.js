@@ -61,13 +61,13 @@ imigu.editor = function(className, config) {
       dom = goog.dom.getDomHelper(textarea),
       toolbar = dom.createDom(goog.dom.TagName.DIV,
                               {id: toolbarId,
-                               style: 'width: 632px;'});
+                               'class': 'g-toolbar'});
 
   goog.dom.insertSiblingAfter(toolbar, textarea);
 
   var editorDiv = dom.createDom(goog.dom.TagName.DIV,
                                 {id: editorId,
-                                 style: 'width: 630px; height: 300px; background-color: white; border: 1px solid grey;'});
+                                 'class': 'g-editor'});
   goog.dom.insertSiblingAfter(editorDiv, toolbar);
 
   textarea.style.display = 'none';

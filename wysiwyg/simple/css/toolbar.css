@@ -26,6 +26,7 @@
   outline: none;
   padding: 2px;
   position: relative;
+  width: 100%;
   zoom: 1; /* The toolbar element must have layout on IE. */
 }
 
